@@ -202,7 +202,7 @@ public class RobotContainer
     DriveController.button(1).onTrue((Commands.runOnce(drivebase::zeroGyro)));
 
     //This is our boost control Right Trigger
-    DriveController.axisGreaterThan(3, 0.01).or(DriveController.axisLessThan(3,-0.01)).onTrue(Commands.runOnce(() -> {
+    DriveController.axisGreaterThan(3, 0.01).or(DriveController.axisLessThan(3,-0.01)).onTrue(Commands.run(() -> {
       
       System.out.println((((DriveController.getRawAxis(3) * -1) + 1) / 2));
       
